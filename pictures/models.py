@@ -29,6 +29,11 @@ class Image(models.Model):
         images = cls.objects.filter(category__name__icontains=category).all()
         return images
 
+    @classmethod
+    def filter_by_location(cls,location):
+        images = cls.objects.filter(loc__name=location).all()
+        return images
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
