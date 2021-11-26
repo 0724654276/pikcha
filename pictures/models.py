@@ -24,6 +24,11 @@ class Image(models.Model):
         image = cls.objects.get(id=image_id)
         return image
 
+    @classmethod
+    def search_image(cls,category):
+        images = cls.objects.filter(category__name__icontains=category).all()
+        return images
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
