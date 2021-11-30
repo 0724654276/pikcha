@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import django_heroku
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from pathlib import Path
+import dj_database_url
+from decouple import config,Csv
 
 
 
@@ -29,7 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '612l=mwq8u@rugaccg7!xiq405fk0m%5p!z4$*%y)mmfa7h2s1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
