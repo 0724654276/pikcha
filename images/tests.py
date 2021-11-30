@@ -9,7 +9,7 @@ class ImageTestClass(TestCase):
         self.location = Location(name="Thika")
         self.location.save()
 
-        self.category = Category(name="Trip")
+        self.category = Category(name="town")
         self.category.save()
 
         self.image = Image(image = "",name = "newI", desc = "Image",loc=self.location,category=self.category)
