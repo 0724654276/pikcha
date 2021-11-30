@@ -4,6 +4,8 @@ from .models import Location,Category,Image
 from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
+
+
 def welcome(request):
     images = Image.all_images()
     return render (request,'index.html',{"images":images})
@@ -38,3 +40,5 @@ def location(request):
     else:
         message = "select location to filter"
         return render(request,"search.html",{"message":message})
+
+
